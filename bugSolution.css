@@ -1,0 +1,31 @@
+/* Correct unit handling in calc(): */
+.element {
+  width: calc(50% - 20px);
+  /* Correct: uses percentage and pixels with proper units */
+}
+
+/* Correct nested calc() functions: */
+.element {
+  width: calc(calc(100% / 2) - 10px);
+  /* Correct: properly nests calc() for complex calculations */
+}
+
+/* Avoid using calc() within incompatible properties (e.g., font-size): */
+.element {
+  font-size: 16px; /* Correct: Use a direct value instead of calc() for font-size */
+}
+
+/* Incorrect: Missing units */
+/*.element {
+  width: calc(50% - 20); /* Incorrect: '20' lacks units */
+}*/
+
+/* Incorrect: Improper nesting */
+/*.element {
+  width: calc(calc(100% / 2)- 10px); /* Incorrect: Space before closing parenthesis */
+}*/
+
+/* Incorrect: Incompatible property */
+/*.element {
+  font-size: calc(1em + 10px); /* Incorrect: calc() should not be used directly for font-size */
+}*/
